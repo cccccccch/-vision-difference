@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .clearfix::after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+
+      header {
+        width: 100%;
+        height: 70px;
+        position: fixed;
+        font-family: '宋体', Arial, Helvetica, sans-serif;
+        background: rgba(204, 204, 204, 0.5);
+      }
+
+      header .wrap {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      header .wrap h1 {
+        float: left;
+        font-size: 35px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        line-height: 70px;
+        background-image: url(https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/f71c12cf3c7d4c0a916dd6483490d96f~tplv-k3u1fbpfcp-watermark.image?);
+        background-position: center center;
+        background-size: cover;
+        background-clip: text;
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .header-txt {
+        float: right;
+        line-height: 1.5;
+        font-size: 18px;
+        margin: 10px 0;
+      }
+
+      .content {
+        height: 100vh;
+      }
+
+      .content1 {
+        background: url(https://uploadstatic.mihoyo.com/contentweb/20200319/2020031921550320292.jpg)
+          no-repeat center center/cover;
+        background-attachment: fixed;
+      }
+
+      .content2 {
+        background: url(https://uploadstatic.mihoyo.com/contentweb/20200319/2020031921552395638.jpg)
+          no-repeat center center/cover;
+        background-attachment: fixed;
+      }
+
+      .content3 {
+        background: url(https://uploadstatic.mihoyo.com/contentweb/20210719/2021071918001232800.jpg)
+          no-repeat center center/cover;
+        background-attachment: fixed;
+      }
+      .txt-content {
+        /* background-color: #fff; */
+        height: 300px;
+        text-align: center;
+        padding: 120px 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+      }
+      .txt-content1 {
+        background-image: url(https://uploadstatic.mihoyo.com/contentweb/20200211/2020021114213984258.jpg);
+      }
+      .txt-content2 {
+        background-image: url(https://uploadstatic.mihoyo.com/contentweb/20200515/2020051511071844630.jpg);
+      }
+      .txt-content1:hover .txt-content-hover {
+        opacity: 1;
+      }
+      .txt-content2:hover .txt-content-hover2 {
+        opacity: 1;
+      }
+      .txt-content::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      .txt-content-hover {
+        background-image: url(https://uploadstatic.mihoyo.com/contentweb/20220121/2022012117384457834.png);
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: calc(50% + 360px) 50%;
+        background-size: 960px 260px;
+        opacity: 0;
+        transition: all 0.2s 0s ease-in;
+        border: #fff solid 6px;
+        box-sizing: border-box;
+      }
+      .txt-content .txt-content-hover2 {
+        opacity: 0;
+      }
+      .txt-content p {
+        line-height: 2;
+        transform: translateY(0);
+        opacity: 0;
+      }
+
+      .txt-content.scroll p {
+        opacity: 1;
+        animation: moveIn 0.6s linear;
+      }
+      @keyframes moveIn {
+        0% {
+          transform: translateY(250px);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+      @media (max-width: 750px) {
+        .header-txt {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap clearfix">
+        <h1>提瓦特大陆</h1>
+        <div class="header-txt">
+          <p>深山踏红叶，耳畔闻鹿鸣。</p>
+          <p>我很喜欢枫叶，可惜枫叶红时总是多离别</p>
+        </div>
+      </div>
+    </header>
+    <div class="content content1"></div>
+    <div class="txt-content txt-content1">
+      <p>
+        位于提瓦特大陆东北部的自由城邦。<br />
+        群山和广袤的平原间，自由之风携着蒲公英的气息吹拂过果酒湖，为坐落于湖心岛上的蒙德城送去<br />
+        风神巴巴托斯的祝福与恩泽。
+      </p>
+      <div class="txt-content-hover"></div>
+    </div>
+    <div class="content content2"></div>
+    <div class="txt-content txt-content2">
+      <p>
+        位于提瓦特大陆东方的富饶港湾。<br />
+        傲然矗立的山麓与石林、广袤的平原与生机勃勃的河滩共同构成了璃月的丰富地貌，在四季分明的<br />
+        气候下焕发出多彩的风华。山石奇景间，又埋藏了多少岩之魔神的古老馈赠等待着人们发掘呢？
+      </p>
+      <div class="txt-content-hover txt-content-hover2"></div>
+    </div>
+    <div class="content content3"></div>
+    <script>
+      const bodyBox = document.body
+      const htmlBox = document.querySelector('html')
+      const txts = document.querySelectorAll('.txt-content')
+      const clientHeight = document.documentElement.clientHeight
+      function fn() {
+        let timer
+        if (timer) return
+        timer = setTimeout(() => {
+          const { scrollTop } = htmlBox
+          const step = Math.floor(scrollTop / clientHeight)
+          const height = txts[0].offsetHeight
+          if (scrollTop - step * clientHeight > height && step < txts.length) {
+            txts[step].classList.add('scroll')
+          } else if (
+            scrollTop >= bodyBox.offsetHeight - clientHeight ||
+            scrollTop == 0
+          ) {
+            for (let i = 0; i < txts.length; i++) {
+              txts[i].classList.remove('scroll')
+            }
+          }
+          timer = null
+        }, 500)
+      }
+      window.addEventListener('scroll', fn)
+      window.onunload = function (e) {
+        console.log(e)
+      }
+    </script>
+  </body>
+</html>
